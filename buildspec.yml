@@ -1,0 +1,35 @@
+version: 0.2
+#env:
+  #variables:
+     # key: "value"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+  #git-credential-helper: yes
+phases:
+  install:
+    #If you use the Ubuntu standard image 2.0 or later, you must specify runtime-versions.
+    #If you specify runtime-versions and use an image other than Ubuntu standard image 2.0, the build fails.
+    runtime-versions:
+      nodejs: 20
+    commands:
+      - npm install
+  pre_build:
+    commands:
+      - npm run lint
+      # - npm run test:unit
+  build:
+    commands:
+      - npm run build
+  #post_build:
+    #commands:
+      # - command
+      # - command
+artifacts:
+  files:
+     - '*'
+    # - location
+  name: react-template-$(date +%Y-%m-%d)
+  #discard-paths: yes
+  base-directory: dist
