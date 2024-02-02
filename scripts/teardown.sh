@@ -4,9 +4,6 @@
 
 NAME="react-template"
 
-# Exit immediately after a non-zero return code
-set -e
-
 # Tear down existing Docker resources
 docker container kill ${NAME}
 sleep 5

@@ -1,16 +1,6 @@
 version: 0.2
-#env:
-  #variables:
-     # key: "value"
-     # key: "value"
-  #parameter-store:
-     # key: "value"
-     # key: "value"
-  #git-credential-helper: yes
 phases:
   install:
-    #If you use the Ubuntu standard image 2.0 or later, you must specify runtime-versions.
-    #If you specify runtime-versions and use an image other than Ubuntu standard image 2.0, the build fails.
     runtime-versions:
       nodejs: 20
     commands:
@@ -19,12 +9,14 @@ phases:
     commands:
       - npm run lint
       # - npm run test:unit
+      # - npm run test:functional
   build:
     commands:
       - npm run build
+      # - docker build -t react-template:${TAG_NAME} .
   #post_build:
     #commands:
-      # - command
+      # - scripts
       # - command
 artifacts:
   files:
