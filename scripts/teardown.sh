@@ -5,6 +5,6 @@
 NAME="react-template"
 
 # Tear down existing Docker resources
-docker container kill ${NAME}
+docker compose down
 sleep 5
 docker container prune --force
