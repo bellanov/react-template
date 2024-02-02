@@ -1,8 +1,5 @@
 #!/bin/bash
 #
-# Deploy the Docker image.
+# Deploy the project's containers.
 
-NAME="react-template"
-
-# Execute container
-docker run --name $NAME -d -p 8080:80 $NAME
+docker compose up -d
