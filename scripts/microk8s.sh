@@ -23,6 +23,12 @@ fi
 
 # Access Kubernetes Dashboard
 if [ $ACTION == "dashboard" ]; then
-  echo "Stopping MicroK8s..."
+  echo "Launching Kubernetes Dashboard..."
   microk8s dashboard-proxy
+fi
+
+# Monitor Kubernetes Resources
+if [ $ACTION == "watch" ]; then
+  echo "Watching Resources..."
+  watch microk8s kubectl get all
 fi
