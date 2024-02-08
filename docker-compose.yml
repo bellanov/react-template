@@ -16,7 +16,10 @@ services:
       - back-tier
 
   db:
-    image: postgres
+    container_name: postgres
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     restart: always
     ports:
       - 5432:5432

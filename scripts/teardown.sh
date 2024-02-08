@@ -8,3 +8,4 @@ NAME="react-template"
 docker compose down
 sleep 5
 docker container prune --force
+docker image rm react-template-db
