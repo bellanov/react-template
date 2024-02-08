@@ -6,9 +6,9 @@ set -e
 # Create ORM Databases
 
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
-	CREATE USER type_orm WITH PASSWORD 'local';
-	CREATE DATABASE type_orm;
-	GRANT ALL PRIVILEGES ON DATABASE type_orm TO type_orm;
+	CREATE USER test_db WITH PASSWORD 'local';
+	CREATE DATABASE test_db;
+	GRANT ALL PRIVILEGES ON DATABASE test_db TO test_db;
 EOSQL
 
 # Execute seeding script

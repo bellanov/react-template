@@ -24,11 +24,12 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_PASSWORD: example
+      POSTGRES_PASSWORD: local
     networks:
       - back-tier
 
   adminer:
+    container_name: adminer
     image: adminer
     restart: always
     ports:
