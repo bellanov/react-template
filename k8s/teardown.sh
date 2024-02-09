@@ -2,6 +2,7 @@
 #
 # Tear down Kubernets resources.
 
+# TODO: Convert these into manifests
 APP="nginx"
 
 # Delete Deployment(s)

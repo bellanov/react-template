@@ -2,6 +2,7 @@
 #
 # Deploy resources to Kubernetes.
 
+# TODO: Convert these into manifests
 APP="nginx"
 
 # Create Deployment
