@@ -12,7 +12,7 @@ Docker is utilized to ensure that deployed resources are ephemeral as developmen
 
 ### Kubernetes (In Progress)
 
-Kubernetes is used to best replicate a production-like environment locally, if the application is to be deployed into **K8s**.
+Kubernetes is used to best replicate a production-like environment locally, if the application is to be deployed into **K8s**. MicroK8s is utilized as a wrapper to kubectl for a much smoother development experience.
 
 ## Development Workflow
 
@@ -20,6 +20,6 @@ Rapid development within this template revolves around the provided scripts with
 
 | Script                      | Description |
 | -----------                 | ----------- |
-| **scripts/deploy.sh**       | Installs dependencies and spins up new resources. |
+| **scripts/deploy.sh**       | Installs dependencies and spins up new containers and a test database. |
 | **scripts/teardown.sh**     | Tears down existing resources. |
 | **scripts/purge.sh**        | Cleans up existing containers and start from a clean, pristine state. |
