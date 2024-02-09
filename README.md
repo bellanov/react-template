@@ -4,11 +4,11 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 ## Prerequisites
 
-A combination of Docker and Kubernetes are used to replicate a *production-like* environment locally. This improves the developer experience, as the developer can be confident that the functionality being developed locally will be seamlessly integrated into production environments.
+A combination of Docker and Kubernetes are used to replicate a *production-like* environment locally. This improves the developer experience, as the developer can be confident that the functionality being developed locally will seamlessly integrate into production environments.
 
 ### Docker / Docker Compose
 
-Docker is utilized to ensure that deployed resources are ephemeral as development is being conducted. This ensures that current development will be independent and unaffected by previous development and deployments.
+Docker is utilized to ensure that deployed resources are ephemeral as development is being conducted. This ensures that current development will be independent and unaffected by previous development.
 
 ### Kubernetes (In Progress)
 
@@ -22,4 +22,4 @@ Rapid development within this template revolves around the provided scripts with
 | -----------                 | ----------- |
 | **scripts/deploy.sh**       | Installs dependencies and spins up new resources. |
 | **scripts/teardown.sh**     | Tears down existing resources. |
-| **scripts/purge.sh**        | Cleans up existing containers so new resources are *ephemeral*. |
+| **scripts/purge.sh**        | Cleans up existing containers and start from a clean, pristine state. |
