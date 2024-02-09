@@ -2,29 +2,24 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A combination of Docker and Kubernetes are used to replicate a *production-like* environment locally. This improves the developer experience, as the developer can be confident that the functionality being developed locally will be seamlessly integrated into production environments.
 
-## Expanding the ESLint configuration
+### Docker / Docker Compose
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Docker is utilized to ensure that deployed resources are ephemeral as development is being conducted. This ensures that current development will be independent and unaffected by previous development and deployments.
 
-- Configure the top-level `parserOptions` property like this:
+### Kubernetes (In Progress)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Kubernetes is used to best replicate a production-like environment locally, if the application is to be deployed into **K8s**.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Development Workflow
+
+Rapid development within this template revolves around the provided scripts within the `scripts/` directory.
+
+| Script                      | Description |
+| -----------                 | ----------- |
+| **scripts/deploy.sh**       | Installs dependencies and spins up new resources. |
+| **scripts/teardown.sh**     | Tears down existing resources. |
+| **scripts/purge.sh**        | Cleans up existing containers so new resources are *ephemeral*. |
