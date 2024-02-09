@@ -4,9 +4,8 @@ FROM node:20-alpine as build
 # Set the working directory
 WORKDIR /app
 
-# Install Dependencies
+# Retrive project files & dependencies
 COPY ./ ./
-RUN npm install
 
 # Build
 RUN npm run build

@@ -16,16 +16,20 @@ services:
       - back-tier
 
   db:
-    image: postgres
+    container_name: postgres
+    build:
+      context: ./db
+      dockerfile: Dockerfile
     restart: always
     ports:
       - 5432:5432
     environment:
-      POSTGRES_PASSWORD: example
+      POSTGRES_PASSWORD: local
     networks:
       - back-tier
 
   adminer:
+    container_name: adminer
     image: adminer
     restart: always
     ports:
