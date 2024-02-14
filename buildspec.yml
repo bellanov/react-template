@@ -15,10 +15,10 @@ phases:
       - npm run build
       - ls -la
       # - docker build -t react-template:${TAG_NAME} .
-  #post_build:
-    #commands:
-      # - scripts
-      # - command
+  post_build:
+    commands:
+      - zip react-template-$(date +%Y-%m-%d) dist/*
+      - ls -la
 artifacts:
   files:
      - '*'
